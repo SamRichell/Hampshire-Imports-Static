@@ -17,6 +17,18 @@ html,body {
     display: none;
     justify-content: space-evenly;
     padding-bottom: 8vh;
+    width: 100vw;
+}
+
+.sector-card {
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(4, 96, 132, 0.808);
+}
+
+.sector-card h3 {
+    color: rgb(255, 255, 255);
 }
 
 /* Portrait mode adjustments */
