@@ -151,12 +151,17 @@ polygon {
 
 /***** Products Page *****/
 
-.products {
+.products.casing {
     display: grid;
     gap: 40px;
+    margin: 10px 0;
 }
 
 @media (min-width: 1000px) {
+    .products.casing {
+        margin: 20px;
+    }
+
     .products > .title {
         grid-column: span 2;
         text-align: center;
