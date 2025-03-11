@@ -1,16 +1,40 @@
+/********** General **********/
+
 html,body {
     height:100%;
 }
 
-/* Main home section styling */
-.home {
+p {
+    color: gray;
+}
+
+.page.casing {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.centre {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+/********** Specific **********/
+
+/***** Home Page *****/
+
+body.home {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: skyblue;
+    background-color: rgb(167, 237, 247);
     background-position: top center;
     background-size: 130% auto;
     background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 .sector-cards {
@@ -21,7 +45,6 @@ html,body {
 }
 
 .sector-card {
-    /* border: 1px solid black; */
     border-radius: 10px;
     padding: 10px;
     background-color: rgba(4, 96, 132, 0.808);
@@ -31,54 +54,20 @@ html,body {
     color: rgb(255, 255, 255);
 }
 
-/* Portrait mode adjustments */
-@media (orientation: portrait) {
-    .home {/* 
-        background-image: url(../Images/Wind\ Turbine.jpg); */
-        height: 100vh;
-    }
-    
-    .sector-cards {
-        flex-wrap: wrap;
-        color: white;
-    }
-}
-
-/* Landscape mode adjustments */
-@media (orientation: landscape) {
-    .home {
-        width: 100%;
-        background-image: url(../Images/Solar\ Farm\ Roof.jpg);
-    }
-}
-
-/* Grid adjustments for wider screens */
-@media (min-width: 1000px) {
-    .products > .title {
-        grid-column: span 2;
-        text-align: center;
-    }
-}
-
-.products {
-    display: grid;
-    gap: 40px;
-}
-
-p {
-    color: gray;
-}
-
-.home .text {
+body.home .text {
     text-align: center;
 }
 
-.home-container {
+.home.casing {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 30vh;
 }
+
+
+
+/* Arrows */
 
 .up.arrow {
     opacity: 0;
@@ -119,7 +108,7 @@ polygon {
   fill: #000;
   transition: all .2s ease-out;
     
-  &.arrow-middle {
+    &.arrow-middle {
 	  opacity: 0.75;
 	}
 
@@ -129,15 +118,115 @@ polygon {
 	 
 }
 
-.about {
+
+
+/* Mobile */
+
+@media (orientation: portrait) {
+    body.home {
+        height: 100vh;
+    }
+    
+    .sector-cards {
+        flex-wrap: wrap;
+        color: white;
+    }
+}
+
+
+
+/* Desktop */
+
+@media (orientation: landscape) {
+    body.home {
+        width: 100%;
+        background-image: url(../Images/Solar\ Farm\ Roof.jpg);
+    }
+}
+
+
+
+
+
+
+/***** Products Page *****/
+
+.products {
     display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr;
-    gap: 210px;
-    margin-top: 2vh;
+    gap: 40px;
+}
+
+@media (min-width: 1000px) {
+    .products > .title {
+        grid-column: span 2;
+        text-align: center;
+    }
+}
+
+
+
+
+
+/***** Contact Page *****/
+
+.contact .page-text {
+    margin-bottom: 0;
+}
+
+.details.casing {
+    margin: 1rem 0;
+}
+
+.details .page-text {
+    margin-bottom: 0;
+}
+
+.details .info {
+    color: black;
+    margin-bottom: 1.5rem;
+}
+
+.contact .page-text {
+    font-size: calc(.8rem + .9vw);
+}
+
+@media (min-width: 600px) {
+    .details.casing {
+        display: grid;
+        grid-template:  1fr 1fr 1fr / 2fr 7fr;
+    }
+
+    .details .info {
+        margin-bottom: 0;
+    }
+}
+
+
+
+
+
+/***** About Page *****/
+
+.about.page.casing {
+    column-gap: 8vw;
+}
+
+.about .page-text {
+    font-size: calc(.8rem + .7vw);
+    max-width: 650px;
+}
+
+.about .image img {
+    height: calc(27vw + 260px);
 }
 
 .about .image {
-    background-image: url(../Images/Suzhou.jpg);
-    background-size: cover;
-    grid-row: span 2;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 1200px) {
+    .about .image {
+        display: none;
+    }
 }

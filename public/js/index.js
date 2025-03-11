@@ -3,7 +3,7 @@ var slogan = $(".slogan.text");
 var downArrow = $(".down.arrow");
 var upArrow = $(".up.arrow");
 var background = $(".home");
-var homeContainer= $(".home-container")
+var homeContainer= $(".home.casing")
 var sectorCards = $(".sector-cards");
 
 var totalAnimationTime = 2000;
